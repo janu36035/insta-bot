@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add a base font for better aesthetics */
+@layer base {
+  body {
+    /* Using 'Inter' as the primary font for a modern feel */
+    font-family: 'Inter', sans-serif;
+    /* This ensures the whole screen is covered by the background */
+    min-height: 100vh;
+    /* Sets the default background color */
+    background-color: #0b0f1a; 
+  }
+}
