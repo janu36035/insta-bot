@@ -256,3 +256,4 @@ export default function AuthPage(): JSX.Element {
     </div>
   );
 }
+
