@@ -7,10 +7,11 @@ import InstaXbotLogo from "../assets/Instaxbot_Logo.png";
 const words = ["Automate", "Grow", "Engage", "Analyze"];
 
 export default function AuthPage(): JSX.Element {
-  const [mode, setMode] = useState<"login" | "signup">("signup");
-  const [email, setEmail] = useState("");
+  // default to login mode for this page and prefill demo credentials
+  const [mode, setMode] = useState<"login" | "signup">("login");
+  const [email, setEmail] = useState("admin@admin.com");
   const [name, setName] = useState("");
-  const [password, setPassword] = useState("");
+  const [password, setPassword] = useState("admin");
   const [verificationCode, setVerificationCode] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [message, setMessage] = useState<string | null>(null);
@@ -36,14 +37,26 @@ export default function AuthPage(): JSX.Element {
 
     try {
       if (mode === "login") {
-        // Example login request
+        // Demo login shortcut: admin@admin.com / admin
+        if (email === "admin@admin.com" && password === "admin") {
+          // set a demo tenant id so Packing page can operate
+          try {
+            localStorage.setItem('tenentid', 'demo-tenant-id');
+          } catch (e) {
+            console.warn('Unable to set localStorage tenentid', e);
+          }
+          setMessage("Demo login successful! Redirecting to packing...");
+          setTimeout(() => navigate("/packing"), 700);
+          return;
+        }
+        // Example login request for non-demo users
         const response = await axios.post(
           "https://22eeecbd471d.ngrok-free.app/api/auth/login",
           { email, password }
         );
         if (response.status === 200) {
           setMessage("Login successful! Redirecting...");
-          setTimeout(() => navigate("/dashboard"), 1500);
+          setTimeout(() => navigate("/packing"), 1500);
         }
       } else {
         // Example signup request
@@ -256,4 +269,3 @@ export default function AuthPage(): JSX.Element {
     </div>
   );
 }
-
