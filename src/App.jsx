@@ -2,6 +2,7 @@ import React from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import LoginPage from './pages/LoginPage'
 import SignupPage from './pages/SignupPage'
+import Packing from './pages/Packing'
 
 export default function App() {
   // App now uses react-router Routes so pages can navigate by URL
@@ -10,6 +11,7 @@ export default function App() {
       <Route path="/" element={<Navigate to="/signup" replace />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignupPage />} />
+  <Route path="/packing" element={<Packing />} />
       {/* lightweight placeholder for dashboard and other routes */}
       <Route path="/dashboard" element={<div className="p-8">Dashboard (placeholder)</div>} />
       <Route path="*" element={<Navigate to="/signup" replace />} />
