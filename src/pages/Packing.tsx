@@ -219,17 +219,18 @@ const Packing: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row min-h-screen font-inter relative overflow-hidden bg-gradient-to-br from-pink-300 via-white to-purple-300">
+    <div className="flex flex-col md:flex-row min-h-screen font-inter relative overflow-hidden bg-gradient-to-br from-rose-200 via-sky-200 to-violet-200">
       {/* Background Blobs (matching Login/Signup) */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-pink-300/70 rounded-full mix-blend-multiply filter blur-3xl opacity-90 animate-blob"></div>
-        <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-purple-300/70 rounded-full mix-blend-multiply filter blur-3xl opacity-90 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-pink-200/80 rounded-full mix-blend-multiply filter blur-3xl opacity-90 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-200/60 rounded-full mix-blend-multiply filter blur-3xl opacity-90 animate-blob"></div>
+        <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-teal-200/60 rounded-full mix-blend-multiply filter blur-3xl opacity-90 animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-fuchsia-200/60 rounded-full mix-blend-multiply filter blur-3xl opacity-90 animate-blob animation-delay-4000"></div>
+        <div className="absolute bottom-1/2 right-1/3 w-72 h-72 bg-indigo-200/60 rounded-full mix-blend-multiply filter blur-3xl opacity-90 animate-blob animation-delay-3000"></div>
       </div>
 
       {/* Card Container - Centered */}
       <div className="relative z-10 w-full max-w-[600px] p-8 flex flex-col justify-center items-center mx-auto">
-        <div className="w-full backdrop-blur-xl bg-white/90 border border-pink-300 rounded-3xl shadow-2xl p-8 space-y-6 hover:bg-white transition-all duration-300">
+        <div className="w-full backdrop-blur-xl bg-gradient-to-b from-violet-200 to-sky-200/95 border border-pink-300 rounded-3xl shadow-2xl p-8 space-y-6 transition-all duration-300 hover:from-violet-300/95 hover:to-sky-300/95">
           {/* Header */}
           <div className="text-center">
             <div className="flex justify-center items-center mb-3">
@@ -260,7 +261,7 @@ const Packing: React.FC = () => {
             <div className="flex justify-center mt-3">
               <button
                 onClick={handleFetchClick}
-                className="bg-white text-black px-8 py-3 rounded-sm hover:bg-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-400 border-2 border-pink-400 shadow-md transition duration-400 font-medium text-lg"
+                className="bg-white text-black px-8 py-3 rounded-sm hover:bg-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-400 border-4 border-gray-400 shadow-md transition duration-400 font-medium text-lg"
               >
                 Fetch Product
               </button>
